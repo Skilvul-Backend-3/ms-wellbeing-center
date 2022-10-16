@@ -7,13 +7,12 @@ export const Login = async(username, password) => {
         console.log(result);
         // find user
         let findUser = result.find(item => item.username == username)
-        console.log(checkUser);
+        console.log(findUser);
         if (!findUser) {
             return 'User tidak ditemukan'
-        } else if (condition) {
-            
+        } else if (findUser.password != password) {
+            return 'Password anda salah'
         }
-
       } catch (error) {
         console.log(error);
         return null;
