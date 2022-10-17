@@ -16,7 +16,29 @@
     <title>Hello, world!</title>
   </head>
   <body>
-    <div class="container"></div>
+    <div class="container-fluid">
+      <div class="row vh-100 align-items-center">
+        <div class="col-6"></div>
+        <div class="col-6 p-5"> 
+          <form id="form-login">
+            <div class="mb-3">
+              <label for="inputEmail" class="form-label">Email address</label>
+              <input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp">
+              <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+            </div>
+            <div class="mb-3">
+              <label for="inputPassword" class="form-label" id="password">Password</label>
+              <input type="password" class="form-control" id="inputPassword">
+            </div>
+            <div class="mb-3 form-check">
+              <input type="checkbox" class="form-check-input" id="exampleCheck1">
+              <label class="form-check-label" for="exampleCheck1">Check me out</label>
+            </div>
+            <button type="submit" class="btn btn-primary">Login</button>
+          </form>
+        </div>
+      </div>
+    </div>
 
     <!-- Optional JavaScript; choose one of the two! -->
     <script src="/js/index.js" type="module"></script>
