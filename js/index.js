@@ -17,13 +17,15 @@ formLogin.onsubmit = (e) => {
   Login(inputEmail, inputPassword).then(
     (result) => {
       console.log(result);
-      // Create a element alert before form
-      const div = document.createElement('div');
-      div.id = 'alert-login'
-      div.className += 'alert';
-      div.className += ' alert-danger';
-      div.innerHTML = `${result}`;
-      formLogin.before(div);
+      if (result) {
+        // Create a element alert before form
+        const div = document.createElement('div');
+        div.id = 'alert-login'
+        div.className += 'alert';
+        div.className += ' alert-danger';
+        div.innerHTML = `${result}`;
+        formLogin.before(div);
+      }
     }
   );
 };
