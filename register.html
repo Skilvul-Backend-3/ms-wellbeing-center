@@ -13,7 +13,7 @@
       crossorigin="anonymous"
     />
 
-    <title>Login</title>
+    <title>Register</title>
   </head>
   <body>
     <div class="container-fluid">
@@ -22,8 +22,20 @@
           <img class="w-50" src="/assets/img/logo.png" alt="" />
         </div>
         <div class="col col-12 col-sm-12 col-lg-6 p-4 p-md-5 p-sm-5">
-          <form id="form-login">
-            <h1 class="mb-5">Welcome, Please Login</h1>
+          <form id="form-register">
+            <h1 class="mb-5">Register your account</h1>
+            <div class="mb-lg-3">
+              <label for="inputEmail" class="form-label">Full Name</label>
+              <input
+                type="text"
+                class="form-control"
+                id="inputFullname"
+                aria-describedby="emailHelp"
+              />
+              <div id="emailHelp" class="form-text">
+                We'll never share your email with anyone else.
+              </div>
+            </div>
             <div class="mb-lg-3">
               <label for="inputEmail" class="form-label">Email address</label>
               <input
@@ -42,9 +54,9 @@
               >
               <input type="password" class="form-control" id="inputPassword" />
             </div>
-            <a href="./register.html">Create a new account</a>
+            <a href="./login.html">Login</a>
             <button type="submit" class="btn btn-primary float-end me-0 px-5">
-              Login
+              Register
             </button>
           </form>
         </div>
@@ -52,7 +64,7 @@
     </div>
 
     <!-- Optional JavaScript; choose one of the two! -->
-    <script src="/js/login.js" type="module"></script>
+    <script src="/js/register.js" type="module"></script>
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script
