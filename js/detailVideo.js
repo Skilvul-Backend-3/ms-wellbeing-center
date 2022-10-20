@@ -1,6 +1,10 @@
+import { getVideoByVideoId } from './controllers/videos.js';
+
+const params = new URLSearchParams(window.location.search);
+const videoId = params.get('videoId');
+// ! youtube
 // 2. This code loads the IFrame Player API code asynchronously.
 var tag = document.createElement('script');
-
 tag.src = 'https://www.youtube.com/iframe_api';
 var firstScriptTag = document.getElementsByTagName('script')[0];
 firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
@@ -9,8 +13,6 @@ firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 //    after the API code downloads.
 var player;
 function onYouTubeIframeAPIReady() {
-  const params = new URLSearchParams(window.location.search);
-  const videoId = params.get('videoId');
   player = new YT.Player('player', {
     videoId: videoId,
     playerVars: {
@@ -21,6 +23,9 @@ function onYouTubeIframeAPIReady() {
       onStateChange: onPlayerStateChange,
     },
   });
+}
+window.onYouTubeIframeAPIReady = function() {
+  onYouTubeIframeAPIReady()
 }
 
 // 4. The API will call this function when the video player is ready.
@@ -41,3 +46,12 @@ function onPlayerStateChange(event) {
 function stopVideo() {
   player.stopVideo();
 }
+
+// ! judul and description
+
+let detailVideo = await getVideoByVideoId(videoId);
+
+const title = document.getElementById('title');
+const deskripsi = document.getElementById('deskripsi');
+title.innerText = detailVideo.title;
+deskripsi.innerText = detailVideo.description
