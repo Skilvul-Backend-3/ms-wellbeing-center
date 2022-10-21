@@ -14,4 +14,4 @@ let my = await data();
 console.log(my.data);
 
 const welcome = document.getElementById('welcome')
-welcome.innerText= `Welcome ${my.data.fullname}`;
+welcome.innerText = `Welcome ${my.data.fullname}`;
