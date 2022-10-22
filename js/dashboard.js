@@ -3,10 +3,15 @@ import { getVideos } from './controllers/videos.js';
 import { verifyUser } from './middleware/authUser.js';
 
 // verify user
+<<<<<<< HEAD
 if (verifyUser()) {
+=======
+if (verifyUser()) { //panggil function verify user
+>>>>>>> main
   location.href = './login.html';
   alert(verifyUser());
 }
+
 // mengambil data diri
 let data = async () => {
   let result = await Me();
