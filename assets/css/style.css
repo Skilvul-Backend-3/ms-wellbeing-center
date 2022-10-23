@@ -102,3 +102,22 @@
 }
 
 /* Card */
+
+/* Footer */
+.footer {
+  background-color: #ececec;
+}
+
+.footer-container {
+  padding-top: 14px;
+  text-align: center;
+  height: 76px;
+  background-color: #d72e2e;
+  color: #f5f5f5;
+}
+
+.footer-container p {
+  margin-bottom: 0;
+}
+
+/* Footer */
