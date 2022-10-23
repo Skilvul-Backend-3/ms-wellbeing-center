@@ -11,34 +11,43 @@
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
   <script src="https://kit.fontawesome.com/9bba6820c1.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="assets/css/style.css">
-  <title>Dashboard</title>
-</head>
-
-<title>MentalHack</title>
+  <title>MentalHack</title>
 </head>
 
 <body>
-  <nav class="navbar bg-light">
+  <nav class="navbar">
     <div class="container-fluid mx-5">
-      <a class="navbar-brand">MentalHACK</a>
+      <div class="brand d-flex">
+        <img src="/assets/img/logo.png" alt="" width="28" height="28" class="d-inline-block logo-brand" />
+        <a class="navbar-brand">MentalHACK</a>
+      </div>
       <form class="d-flex w-50 p-2" role="search">
         <div class="input-group">
           <input type="text" class="form-control form-control" placeholder="Username" aria-label="Username"
             aria-describedby="basic-addon1" />
-          <span class="input-group-text"><i class="fa-solid fa-magnifying-glass"></i></span>
+          <button>
+            <span class="input-group-text search-button"><i class="fa-solid fa-magnifying-glass"></i></span>
+          </button>
         </div>
       </form>
-      <i class="fa-solid fa-circle-user" style="font-size: 37px"></i>
+      <div class="dropdown">
+        <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <i class="fa-solid fa-circle-user user-img" style="font-size: 35px"></i>
+        </button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="#">Logout</a></li>
+        </ul>
+      </div>
     </div>
     <ul class="nav justify-content-around w-100">
       <li class="nav-item">
         <a class="nav-link" href="#">Parenting</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">anak</a>
+        <a class="nav-link" href="#">Anak</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">remaja</a>
+        <a class="nav-link" href="#">Remaja</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Dewasa</a>
@@ -55,7 +64,19 @@
     </ul>
   </nav>
 
-  <div class="container">
+  <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="assets/img/carousel-bg.jpg" class="d-block w-100 carousel-img" alt="">
+        <div class="carousel-caption d-none d-md-block carousel-text">
+          <p class="display-1 fw-bolder">MentalHACK</p>
+          <h3 class="text-capitalize">Let's make you smile ^^</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid container-body">
     <div class="row">
       <div class="col">
         <h1 id="welcome"></h1>

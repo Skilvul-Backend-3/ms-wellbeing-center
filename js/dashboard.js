@@ -30,7 +30,7 @@ dataVideo.map((item) => {
   cardContainer.innerHTML += `<div id="${item.videoId}" class="card m-3 hoveryt" style="width: 14rem">
   <img src="https://img.youtube.com/vi/${item.videoId}/mqdefault.jpg">
   <div class="card-body">
-    <h6 class="card-title">${item.title}</h6>
+    <p class="card-title">${item.title}</p>
   </div>
 </div>`;
   console.log(item);
