@@ -1,5 +1,5 @@
 import { Me } from './controllers/Auth.js';
-import { getVideos } from './controllers/videos.js';
+import { getCategory, getVideos } from './controllers/videos.js';
 import { verifyUser } from './middleware/authUser.js';
 
 // verify user
@@ -14,7 +14,7 @@ let data = async () => {
   return result;
 };
 let my = await data();
-console.log(my.data);
+// console.log(my.data);
 
 const welcome = document.getElementById('welcome');
 welcome.innerText = `Welcome ${my.data.fullname}`;
@@ -22,7 +22,7 @@ welcome.innerText = `Welcome ${my.data.fullname}`;
 // get all data video
 let dataVideo = await getVideos();
 function clickCard(id) {
-  console.log(id);
+  // console.log(id);
 }
 
 const cardContainer = document.getElementById('card-container');
@@ -33,15 +33,28 @@ dataVideo.map((item) => {
     <h6 class="card-title">${item.title}</h6>
   </div>
 </div>`;
-  console.log(item);
+  // console.log(item);
 });
 
 const allCard = document.getElementsByClassName('card');
-console.log(allCard);
+// console.log(allCard);
 
 for (const item of allCard) {
-  console.log(item);
+  // console.log(item);
   item.addEventListener('click', (event) => {
     location.href = `./detail-video.html?videoId=${event.currentTarget.id}`;
   });
 }
+
+//--------------------------Kategori----------------------
+let dataKategori= await getVideos();
+let findKategori = dataKategori.filter((schema, index, self) => index === self.findIndex((obj) => (obj.category === schema.category)))
+let kategori= document.getElementById("kategori")
+findKategori.map((item) => {
+  kategori.innerHTML += `<li onclick="getCategory('${item.category}')" class="nav-item">
+  <a class="nav-link" href="#">${item.category}</a>
+</li>`;
+});
+console.log(await getCategory("fakta unik"))
+
+
