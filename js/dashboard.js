@@ -28,17 +28,6 @@ let dataVideo = await getVideos();
 console.log(dataVideo);
 createCard(dataVideo);
 
-const cardContainer = document.getElementById('card-container');
-dataVideo.map((item) => {
-  cardContainer.innerHTML += `<div id="${item.videoId}" class="card m-3 hoveryt" style="width: 14rem">
-  <img src="https://img.youtube.com/vi/${item.videoId}/mqdefault.jpg">
-  <div class="card-body">
-    <p class="card-title">${item.title}</p>
-  </div>
-</div>`;
-  console.log(item);
-});
-
 const formSearch = document.getElementsByTagName('form')[0];
 formSearch.addEventListener('keyup', async (e) => {
   e.preventDefault();
@@ -49,6 +38,7 @@ formSearch.addEventListener('keyup', async (e) => {
     createCard(dataVideo);
   } else {
     dataVideo = await getVideoBySearch(searchTerm);
-    createCard(dataVideo)
+    createCard(dataVideo);
   }
 });
+
