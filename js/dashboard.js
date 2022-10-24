@@ -51,7 +51,7 @@ let findKategori = dataKategori.filter(
 let kategori = document.getElementById('ul-category');
 await findKategori.map((item) => {
   kategori.innerHTML += `<li class="nav-item">
-  <a class="nav-link" href="#">${item.category}</a>
+  <a class="nav-link mb-2" href="#">${item.category}</a>
 </li>`;
 });
 
