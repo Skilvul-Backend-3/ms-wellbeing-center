@@ -1,3 +1,4 @@
+import { Logout } from './controllers/Auth.js';
 import { getVideoByVideoId } from './controllers/videos.js';
 import { verifyUser } from './middleware/authUser.js';
 
@@ -7,6 +8,12 @@ if (verifyUser()) {
   location.href = './login.html';
   alert(verifyUser());
 }
+
+// logout
+const logout = document.getElementById('logout');
+logout.addEventListener('click', () => {
+  Logout()
+});
 
 const params = new URLSearchParams(window.location.search);
 const videoId = params.get('videoId');
@@ -32,9 +39,9 @@ function onYouTubeIframeAPIReady() {
     },
   });
 }
-window.onYouTubeIframeAPIReady = function() {
-  onYouTubeIframeAPIReady()
-}
+window.onYouTubeIframeAPIReady = function () {
+  onYouTubeIframeAPIReady();
+};
 
 // 4. The API will call this function when the video player is ready.
 function onPlayerReady(event) {
@@ -62,7 +69,7 @@ let detailVideo = await getVideoByVideoId(videoId);
 const title = document.getElementById('title');
 const deskripsi = document.getElementById('deskripsi');
 title.innerText = detailVideo.title;
-deskripsi.innerText = detailVideo.description
+deskripsi.innerText = detailVideo.description;
 
 // //-----------------rekomendasi---------------
 

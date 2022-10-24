@@ -1,4 +1,4 @@
-import { Me } from './controllers/Auth.js';
+import { Logout, Me } from './controllers/Auth.js';
 import {
   createCard,
   getVideoByCategory,
@@ -13,6 +13,12 @@ if (verifyUser()) {
   location.href = './login.html';
   alert(verifyUser());
 }
+
+// logout
+const logout = document.getElementById('logout');
+logout.addEventListener('click', () => {
+  Logout();
+});
 
 // mengambil data diri
 let data = async () => {
