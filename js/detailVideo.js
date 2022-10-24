@@ -1,4 +1,12 @@
 import { getVideoByVideoId } from './controllers/videos.js';
+import { verifyUser } from './middleware/authUser.js';
+
+// verify user
+if (verifyUser()) {
+  //panggil function verify user
+  location.href = './login.html';
+  alert(verifyUser());
+}
 
 const params = new URLSearchParams(window.location.search);
 const videoId = params.get('videoId');

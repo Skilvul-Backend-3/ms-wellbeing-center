@@ -1,3 +1,6 @@
+body{
+  min-height: 100%;
+}
 .container-body {
   background-color: #ececec;
 }
