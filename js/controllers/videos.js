@@ -24,12 +24,16 @@ export const createCard = (dataVideo) => {
   cardContainer.innerHTML = "";
   // create card youtube
   dataVideo.map((item) => {
-    cardContainer.innerHTML += `<div id="${item.videoId}" class="card m-3 hoveryt" style="width: 14rem">
+    cardContainer.innerHTML += 
+    
+    `
+    <div id="${item.videoId}" class="card hoveryt p-0 " style="width: 25rem">
     <img src="https://img.youtube.com/vi/${item.videoId}/mqdefault.jpg">
     <div class="card-body">
       <h6 class="card-title">${item.title}</h6>
     </div>
-  </div>`;
+    </div>
+  `;
   });
 
   const allCard = document.getElementsByClassName('card');

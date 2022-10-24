@@ -55,3 +55,19 @@ const title = document.getElementById('title');
 const deskripsi = document.getElementById('deskripsi');
 title.innerText = detailVideo.title;
 deskripsi.innerText = detailVideo.description
+
+// //-----------------rekomendasi---------------
+
+// let dataRec = await getVideos();
+// console.log(dataRec);
+// const createRec = (dataRec) => {
+//   let rec= document.getElementById("list-d-video")
+//   // card rekomen
+//   dataRec.map((item) => {
+//     rec.innerHTML += `<div id="${item.videoId}" class="card m-3 hoveryt" style="width: 14rem">
+//     <img src="https://img.youtube.com/vi/${item.videoId}/mqdefault.jpg">
+//     <div class="card-body">
+//       <h6 class="card-title">${item.title}</h6>
+//     </div>
+//   </div>`;
+//   });
