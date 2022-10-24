@@ -51,7 +51,7 @@ let findKategori = dataKategori.filter(
 let kategori = document.getElementById('ul-category');
 await findKategori.map((item) => {
   kategori.innerHTML += `<li class="nav-item">
-  <a class="nav-link" href="#">${item.category}</a>
+  <a class="nav-link mb-2" href="#">${item.category}</a>
 </li>`;
 });
 
@@ -69,17 +69,4 @@ for (const item of navLink) {
     }
     createCard(dataKategori);
   });
-}
-
-if (
-  !dataKategori ||
-  dataKategori == null ||
-  dataKategori == '' ||
-  dataKategori == []
-) {
-  cardContainer.innerHTML = '';
-  const cardContainer = document.getElementById('card-container');
-  cardContainer.innerHTML = `
-  <h1 class="d-flex justify-content-center align-items-center">Data Tidak Ditemukan :(</h1>
-  `;
 }
