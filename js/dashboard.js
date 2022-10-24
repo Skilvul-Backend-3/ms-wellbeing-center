@@ -70,16 +70,3 @@ for (const item of navLink) {
     createCard(dataKategori);
   });
 }
-
-if (
-  !dataKategori ||
-  dataKategori == null ||
-  dataKategori == '' ||
-  dataKategori == []
-) {
-  cardContainer.innerHTML = '';
-  const cardContainer = document.getElementById('card-container');
-  cardContainer.innerHTML = `
-  <h1 class="d-flex justify-content-center align-items-center">Data Tidak Ditemukan :(</h1>
-  `;
-}
