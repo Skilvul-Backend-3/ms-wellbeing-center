@@ -1,9 +1,15 @@
 import { Me } from './controllers/Auth.js';
-import { getCategory, getVideos } from './controllers/videos.js';
+import {
+  createCard,
+  getVideoByCategory,
+  getVideoBySearch,
+  getVideos,
+} from './controllers/videos.js';
 import { verifyUser } from './middleware/authUser.js';
 
 // verify user
-if (verifyUser()) { //panggil function verify user
+if (verifyUser()) {
+  //panggil function verify user
   location.href = './login.html';
   alert(verifyUser());
 }
@@ -14,47 +20,57 @@ let data = async () => {
   return result;
 };
 let my = await data();
-// console.log(my.data);
-
-const welcome = document.getElementById('welcome');
-welcome.innerText = `Welcome ${my.data.fullname}`;
 
 // get all data video
 let dataVideo = await getVideos();
-function clickCard(id) {
-  // console.log(id);
-}
+createCard(dataVideo);
 
-const cardContainer = document.getElementById('card-container');
-dataVideo.map((item) => {
-  cardContainer.innerHTML += `<div id="${item.videoId}" class="card m-3 hoveryt" style="width: 14rem">
-  <img src="https://img.youtube.com/vi/${item.videoId}/mqdefault.jpg">
-  <div class="card-body">
-    <h6 class="card-title">${item.title}</h6>
-  </div>
-</div>`;
-  // console.log(item);
+const formSearch = document.getElementsByTagName('form')[0];
+formSearch.addEventListener('keyup', async (e) => {
+  e.preventDefault();
+  let searchTerm = document.getElementById('search').value;
+  console.log(searchTerm);
+  if (!searchTerm) {
+    dataVideo = await getVideos();
+    createCard(dataVideo);
+  } else {
+    dataVideo = await getVideoBySearch(searchTerm);
+    console.log(dataVideo);
+    createCard(dataVideo);
+  }
 });
 
-const allCard = document.getElementsByClassName('card');
-// console.log(allCard);
-
-for (const item of allCard) {
-  // console.log(item);
-  item.addEventListener('click', (event) => {
-    location.href = `./detail-video.html?videoId=${event.currentTarget.id}`;
-  });
-}
-
-//--------------------------Kategori----------------------
-let dataKategori= await getVideos();
-let findKategori = dataKategori.filter((schema, index, self) => index === self.findIndex((obj) => (obj.category === schema.category)))
-let kategori= document.getElementById("kategori")
-findKategori.map((item) => {
-  kategori.innerHTML += `<li onclick="getCategory('${item.category}')" class="nav-item">
+let dataKategori = await getVideos();
+let findKategori = dataKategori.filter(
+  (schema, index, self) =>
+    index === self.findIndex((obj) => obj.category === schema.category)
+);
+let kategori = document.getElementById('ul-category');
+await findKategori.map((item) => {
+  kategori.innerHTML += `<li class="nav-item">
   <a class="nav-link" href="#">${item.category}</a>
 </li>`;
 });
-console.log(await getCategory("fakta unik"))
 
+const navLink = document.getElementsByClassName('nav-link');
 
+for (const item of navLink) {
+  console.log(item.innerText.toLowerCase());
+  item.addEventListener('click', async () => {
+    event.preventDefault();
+    if (item.innerText.toLowerCase() == 'semua') {
+      dataKategori = await getVideos();
+    } else {
+      dataKategori = await getVideoByCategory(item.innerText.toLowerCase());
+    }
+    createCard(dataKategori);
+  });
+}
+
+if (!dataKategori || dataKategori == null || dataKategori == '' || dataKategori == []) {
+  cardContainer.innerHTML = ""
+  const cardContainer = document.getElementById('card-container');
+  cardContainer.innerHTML = `
+  <h1 class="d-flex justify-content-center align-items-center">Data Tidak Ditemukan :(</h1>
+  `;
+}
