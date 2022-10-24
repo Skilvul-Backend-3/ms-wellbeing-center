@@ -22,7 +22,7 @@ export const getVideoByVideoId = async (videoId) => {
 
 export const createCard = (dataVideo) => {
   const cardContainer = document.getElementById('card-container');
-  cardContainer.innerHTML = '';
+  cardContainer.innerHTML = "";
   // create card youtube
   dataVideo.map((item) => {
     cardContainer.innerHTML += `<div id="${item.videoId}" class="card m-3 hoveryt" style="width: 14rem">
@@ -50,6 +50,18 @@ export const getVideoBySearch = async (search) => {
     result = result.filter((item) =>
       item.title.toLowerCase().includes(search.toLowerCase())
     );
+    return result;
+  } catch (error) {
+    console.log(error);
+    return null;
+  }
+};
+
+export const getVideoByCategory = async (category) => {
+  try {
+    const URL = `https://6348abae0b382d796c75343e.mockapi.io/videos?category=${category}`;
+    let response = await fetch(URL);
+    let result = await response.json();
     return result;
   } catch (error) {
     console.log(error);
