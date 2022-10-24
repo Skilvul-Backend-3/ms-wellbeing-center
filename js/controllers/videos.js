@@ -19,7 +19,6 @@ export const getVideoByVideoId = async (videoId) => {
     return error;
   }
 };
-
 export const createCard = (dataVideo) => {
   const cardContainer = document.getElementById('card-container');
   cardContainer.innerHTML = "";
@@ -68,3 +67,4 @@ export const getVideoByCategory = async (category) => {
     return null;
   }
 };
+
