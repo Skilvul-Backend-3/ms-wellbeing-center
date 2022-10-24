@@ -15,8 +15,8 @@
 
   <body>
     <!-- Navbar -->
-    <nav class="navbar">
-      <div class="container-fluid mx-5">
+    <nav class="navbar navbar-expand-lg navbar-light bg-danger" id="navbar">
+      <div class="container-fluid">
         <div class="brand d-flex">
           <img
             src="/assets/img/navlogo.png"
@@ -27,40 +27,50 @@
           />
           <a class="navbar-brand" href="dashboard.html">MentalHACK</a>
         </div>
-        <form class="d-flex w-50 p-2">
-          <div class="input-group">
-            <input
-              type="text"
-              class="form-control form-control"
-              placeholder="Search..."
-              id="search"
-            />
-          </div>
-        </form>
-        <div class="dropdown">
-          <button
-            class="btn dropdown-toggle"
-            type="button"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-          >
-            <i
-              class="fa-solid fa-circle-user user-img"
-              style="font-size: 35px"
-            ></i>
-          </button>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Logout</a></li>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           </ul>
+          <form class="d-flex p-2 form-search w-100 justify-content-between">
+            <div class="input-group search-form">
+              <input
+                type="text"
+                class="form-control form-control"
+                placeholder="Search..."
+                id="search"
+              />
+            </div>
+            <div class="dropdown">
+              <button
+                class="btn dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <i
+                  class="fa-solid fa-circle-user user-img"
+                  style="font-size: 35px"
+                ></i>
+              </button>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Logout</a></li>
+              </ul>
+            </div>
+          </form>
         </div>
       </div>
+    </nav>
+    <div class="container-fluid">
       <ul class="nav justify-content-around w-100" id="ul-category">
         <li class="nav-item">
-          <a class="nav-link" href="#">semua</a>
+          <a class="nav-link mb-2" href="#">semua</a>
         </li>
       </ul>
-    </nav>
-    <!-- Navbar -->
+    </div>
+   
+    <!-- navbar -->
     <div
       id="carousel-img"
       class="carousel slide"
