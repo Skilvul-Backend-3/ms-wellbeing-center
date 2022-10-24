@@ -35,11 +35,9 @@ export const Me = async () => {
   };
 };
 
-export const Logout = (req, res) => {
-  req.session.destroy((err) => {
-    if (err) return res.status(400).json({ msg: 'Tidak dapat logout' });
-    res.status(200).json({ msg: 'Anda telah logout' });
-  });
+export const Logout = () => {
+  sessionStorage.clear();
+  location.href = './login.html';
 };
 
 export const Register = async (data) => {

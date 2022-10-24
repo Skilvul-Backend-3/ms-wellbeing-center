@@ -27,13 +27,15 @@
           <i class="fa-solid fa-circle-user user-img" style="font-size: 35px"></i>
         </button>
         <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="#">Logout</a></li>
+          <li><a class="dropdown-item" href="#" id="logout">Logout</a></li>
         </ul>
       </div>
     </div>
   </nav>
 
+  
   <div class="container mt-4">
+  <i class="fa fa-arrow-left mb-3" onclick="location.href = './dashboard.html';" style="font-size: 5em;" aria-hidden="true"></i>
     <div class="row mx-2">
       <div class="ratio ratio-16x9">
         <div id="player"></div>
@@ -42,12 +44,12 @@
     <!-- keterangan judul dan overview-->
 
     <div class="row justify-content-between  mx-2">
-      <div class="col col-lg-8 ">
+      <div class="col col-12 col-lg-8 col-sm-12 col-md-12 pt-4">
         <h3 id="title">Title</h3>
-        <p id="deskripsi"></p>
+        <p id="deskripsi" style="text-align: justify;"></p>
       </div>
-      <div class="col col-lg-4 text-center d-flex flex-column align-items-end">
-        <h4>video terkait</h4>
+      <div class="col col-12 col-lg-4 col-sm-12 col-md-12 text-center d-flex flex-column align-items-center align-items-lg-end align-items-md-center align-items-sm-center pt-4">
+        <h4 class="pe-4">video terkait</h4>
         <div class="card hoveryt p-0 my-3" style="width: 12rem">
           <img src="https://img.youtube.com/vi/D8BOVAcdhho/mqdefault.jpg">
           <div class="card-body">
