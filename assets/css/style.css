@@ -9,9 +9,11 @@ body{
 .navbar {
   background-color: #d72e2e;
 }
+
 .navbar-brand:hover {
   color: #d1c2c0;
 }
+
 .navbar-brand {
   color: #f5f5f5;
   font-weight: bold;
@@ -89,6 +91,7 @@ body{
 #card-containerr {
   min-height: 65.5vh;
 }
+
 .card {
   transition: 0.5s;
   border-radius: 5px;
@@ -114,20 +117,9 @@ footer {
   text-align: center;
 }
 
-footer > p {
+footer>p {
   padding-top: 20px;
   color: #ececec;
 }
-
-/* .footer-container {
-  text-align: center;
-  height: 76px;
-  background-color: #d72e2e;
-  color: #f5f5f5;
-}
-
-.footer-container p {
-  margin-bottom: 0;
-} */
 
 /* Footer */
