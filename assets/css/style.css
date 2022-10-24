@@ -105,12 +105,18 @@
 /* Card */
 
 /* Footer */
-.footer {
-  background-color: #ececec;
+footer {
+  padding: 1px;
+  background-color: #d72e2e;
+  text-align: center;
 }
 
-.footer-container {
-  padding-top: 14px;
+footer > p {
+  padding-top: 20px;
+  color: #ececec;
+}
+
+/* .footer-container {
   text-align: center;
   height: 76px;
   background-color: #d72e2e;
@@ -119,6 +125,6 @@
 
 .footer-container p {
   margin-bottom: 0;
-}
+} */
 
 /* Footer */
